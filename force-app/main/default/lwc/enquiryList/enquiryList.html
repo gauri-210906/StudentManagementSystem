@@ -1,0 +1,31 @@
+
+<template>
+    <lightning-card title="Student Enquiries" icon-name="standard:feedback">
+        <div class="slds-p-around_medium">
+
+            <template if:true={enquiries.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={enquiries.data}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+
+            <template if:true={enquiries.error}>
+                <div class="slds-text-color_error">
+                    Unable to load enquiry records.
+                </div>
+            </template>
+
+            <template if:false={enquiries.data}>
+                <template if:false={enquiries.error}>
+                    <lightning-spinner
+                        alternative-text="Loading enquiries">
+                    </lightning-spinner>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

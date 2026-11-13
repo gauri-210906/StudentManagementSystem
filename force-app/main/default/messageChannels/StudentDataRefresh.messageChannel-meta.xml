@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel
+    xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <masterLabel>Student Data Refresh</masterLabel>
+
+    <isExposed>true</isExposed>
+
+    <lightningMessageFields>
+        <fieldName>recordType</fieldName>
+        <description>Record type to refresh</description>
+    </lightningMessageFields>
+
+</LightningMessageChannel>

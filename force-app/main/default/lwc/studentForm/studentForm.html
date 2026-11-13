@@ -1,0 +1,71 @@
+<template>
+    <lightning-card
+        title="Student Registration"
+        icon-name="standard:people">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="PRN Number"
+                name="prnNumber"
+                value={prnNumber}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+
+            <lightning-combobox
+                label="Department"
+                name="department"
+                value={department}
+                options={departmentOptions}
+                onchange={handleChange}
+                required>
+            </lightning-combobox>
+
+            <lightning-combobox
+                label="Academic Year"
+                name="academicYear"
+                value={academicYear}
+                options={academicYearOptions}
+                onchange={handleChange}
+                required>
+            </lightning-combobox>
+
+            <lightning-input
+                type="email"
+                label="Email"
+                name="email"
+                value={email}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+
+            <lightning-input
+                type="tel"
+                label="Phone"
+                name="phone"
+                value={phone}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+
+            <div class="slds-m-top_medium">
+
+                <lightning-button
+                    label="Register Student"
+                    variant="brand"
+                    onclick={handleRegister}
+                    disabled={isLoading}>
+                </lightning-button>
+
+                <template if:true={isLoading}>
+                    <lightning-spinner
+                        alternative-text="Registering student">
+                    </lightning-spinner>
+                </template>
+
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

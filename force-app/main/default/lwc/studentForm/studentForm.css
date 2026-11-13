@@ -1,0 +1,14 @@
+
+lightning-card {
+    display: block;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+lightning-combobox {
+    margin-top: 12px;
+}
+
+lightning-input {
+    margin-top: 12px;
+}
