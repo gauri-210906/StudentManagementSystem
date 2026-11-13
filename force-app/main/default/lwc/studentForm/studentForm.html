@@ -1,3 +1,4 @@
+
 <template>
     <lightning-card
         title="Student Registration"
@@ -5,15 +6,16 @@
 
         <div class="slds-p-around_medium">
 
+            <!-- Student Name -->
             <lightning-input
-            label="Student Name"
-            name="Name"
-            value={studentRecord.Name}
-            onchange={handleChange}
-            required>
+                label="Student Name"
+                name="studentName"
+                value={studentName}
+                onchange={handleChange}
+                required>
             </lightning-input>
 
-
+            <!-- PRN Number -->
             <lightning-input
                 label="PRN Number"
                 name="prnNumber"
@@ -22,6 +24,7 @@
                 required>
             </lightning-input>
 
+            <!-- Department -->
             <lightning-combobox
                 label="Department"
                 name="department"
@@ -31,6 +34,7 @@
                 required>
             </lightning-combobox>
 
+            <!-- Academic Year -->
             <lightning-combobox
                 label="Academic Year"
                 name="academicYear"
@@ -40,6 +44,7 @@
                 required>
             </lightning-combobox>
 
+            <!-- Email -->
             <lightning-input
                 type="email"
                 label="Email"
@@ -49,6 +54,7 @@
                 required>
             </lightning-input>
 
+            <!-- Phone -->
             <lightning-input
                 type="tel"
                 label="Phone"
