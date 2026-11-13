@@ -6,6 +6,15 @@
         <div class="slds-p-around_medium">
 
             <lightning-input
+            label="Student Name"
+            name="Name"
+            value={studentRecord.Name}
+            onchange={handleChange}
+            required>
+            </lightning-input>
+
+
+            <lightning-input
                 label="PRN Number"
                 name="prnNumber"
                 value={prnNumber}

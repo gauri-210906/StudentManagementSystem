@@ -19,21 +19,22 @@ import STUDENT_DATA_REFRESH from
 export default class StudentForm extends LightningElement {
 
     departmentOptions = [
-    { label: 'Computer Science', value: 'Computer Science' },
-    { label: 'Information Technology', value: 'Information Technology' },
-    { label: 'Electronics', value: 'Electronics' },
-    { label: 'Mechanical', value: 'Mechanical' },
-    { label: 'Civil', value: 'Civil' }
+        { label: 'Computer Science', value: 'Computer Science' },
+        { label: 'Information Technology', value: 'Information Technology' },
+        { label: 'Electronics', value: 'Electronics' },
+        { label: 'Mechanical', value: 'Mechanical' },
+        { label: 'Civil', value: 'Civil' }
     ];
 
-    
     academicYearOptions = [
-    { label: 'First Year', value: 'First Year' },
-    { label: 'Second Year', value: 'Second Year' },
-    { label: 'Third Year', value: 'Third Year' },
-    { label: 'Fourth Year', value: 'Fourth Year' }
+        { label: 'First Year', value: 'First Year' },
+        { label: 'Second Year', value: 'Second Year' },
+        { label: 'Third Year', value: 'Third Year' },
+        { label: 'Fourth Year', value: 'Fourth Year' }
     ];
 
+    // Student details
+    studentName = '';
     prnNumber = '';
     department = '';
     academicYear = '';
@@ -66,6 +67,7 @@ export default class StudentForm extends LightningElement {
         }
 
         const studentRecord = {
+            Name: this.studentName,
             PRN_Number__c: this.prnNumber,
             Department__c: this.department,
             Academic_Year__c: this.academicYear,
@@ -114,6 +116,7 @@ export default class StudentForm extends LightningElement {
     }
 
     resetForm() {
+        this.studentName = '';
         this.prnNumber = '';
         this.department = '';
         this.academicYear = '';

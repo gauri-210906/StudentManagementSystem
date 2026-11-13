@@ -2,17 +2,28 @@ public with sharing class StudentController {
 
     // 1. Create a new Student
     @AuraEnabled
+    
+    @AuraEnabled
     public static Student__c createStudent(Student__c studentRecord) {
         try {
-            if (studentRecord == null) {
-                throw new AuraHandledException('Student details are required.');
-            }
+        if (studentRecord == null) {
+            throw new AuraHandledException('Student details are required.');
+        }
 
-            insert studentRecord;
-            return studentRecord;
+        if (String.isBlank(studentRecord.Name)) {
+            throw new AuraHandledException('Student Name is required.');
+        }
+
+        if (String.isBlank(studentRecord.PRN_Number__c)) {
+            throw new AuraHandledException('PRN Number is required.');
+        }
+
+        insert studentRecord;
+
+        return studentRecord;
 
         } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
+        throw new AuraHandledException(e.getMessage());
         }
     }
 
